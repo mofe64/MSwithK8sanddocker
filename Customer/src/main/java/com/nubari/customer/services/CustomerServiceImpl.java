@@ -2,6 +2,8 @@ package com.nubari.customer.services;
 
 import com.nubari.clients.fraud.FraudClient;
 import com.nubari.clients.fraud.responses.FraudCheckResponse;
+import com.nubari.clients.notification.NotificationClient;
+import com.nubari.clients.notification.requests.NotificationRequest;
 import com.nubari.customer.dtos.requests.CustomerRegistrationRequest;
 import com.nubari.customer.model.Customer;
 import com.nubari.customer.repository.CustomerRepository;
@@ -12,7 +14,8 @@ import org.springframework.web.client.RestTemplate;
 public record CustomerServiceImpl(
         CustomerRepository repository,
         RestTemplate restTemplate,
-        FraudClient fraudClient
+        FraudClient fraudClient,
+        NotificationClient notificationClient
 ) implements CustomerService {
     @Override
     public void registerCustomer(CustomerRegistrationRequest request) {
@@ -35,6 +38,14 @@ public record CustomerServiceImpl(
         if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
         }
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        customer.getId(),
+                        customer.getEmail(),
+                        String.format("Hi %s, welcome to stuff...",
+                                customer.getFirstname())
+                )
+        );
 
 
     }
