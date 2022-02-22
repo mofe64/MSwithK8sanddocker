@@ -1,4 +1,4 @@
-package com.nubari.customer.dtos.responses;
+package com.nubari.clients.fraud.responses;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 }

@@ -2,7 +2,7 @@ package com.nubari.fraud.controllers;
 
 
 
-import com.nubari.fraud.FraudCheckResponse;
+import com.nubari.clients.fraud.responses.FraudCheckResponse;
 import com.nubari.fraud.service.FraudCheckService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
