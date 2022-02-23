@@ -24,3 +24,11 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
+rabbitmq:
+  exchanges:
+    internal: internal.exchange #we create an exchange internal and give it a name internal.exchange
+  queue:
+    notification: notification.queue #we create a queue notification and give it a name notification.queue
+  routing-keys:
+    internal-notification: internal.notification.routing-key
+
