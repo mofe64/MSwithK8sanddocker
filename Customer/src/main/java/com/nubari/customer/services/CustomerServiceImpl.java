@@ -1,5 +1,6 @@
 package com.nubari.customer.services;
 
+import com.nubari.amqp.RabbitMQMessageProducer;
 import com.nubari.clients.fraud.FraudClient;
 import com.nubari.clients.fraud.responses.FraudCheckResponse;
 import com.nubari.clients.notification.NotificationClient;
@@ -15,7 +16,8 @@ public record CustomerServiceImpl(
         CustomerRepository repository,
         RestTemplate restTemplate,
         FraudClient fraudClient,
-        NotificationClient notificationClient
+        NotificationClient notificationClient,
+        RabbitMQMessageProducer rabbitMQMessageProducer
 ) implements CustomerService {
     @Override
     public void registerCustomer(CustomerRegistrationRequest request) {
@@ -38,13 +40,17 @@ public record CustomerServiceImpl(
         if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
         }
-        notificationClient.sendNotification(
-                new NotificationRequest(
-                        customer.getId(),
-                        customer.getEmail(),
-                        String.format("Hi %s, welcome to stuff...",
-                                customer.getFirstname())
-                )
+
+        NotificationRequest notificationRequest = new NotificationRequest(
+                customer.getId(),
+                customer.getEmail(),
+                String.format("Hi %s, welcome to stuff...",
+                        customer.getFirstname())
+        );
+        rabbitMQMessageProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
         );
 
 
