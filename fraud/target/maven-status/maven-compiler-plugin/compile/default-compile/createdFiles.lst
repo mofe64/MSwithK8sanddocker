@@ -1,0 +1,6 @@
+com/nubari/fraud/FraudApplication.class
+com/nubari/fraud/service/FraudCheckService.class
+com/nubari/fraud/models/FraudCheckHistory$FraudCheckHistoryBuilder.class
+com/nubari/fraud/models/FraudCheckHistory.class
+com/nubari/fraud/controllers/FraudController.class
+com/nubari/fraud/repository/FraudCheckHistoryRepository.class

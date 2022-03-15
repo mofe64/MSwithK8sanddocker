@@ -10,7 +10,7 @@
         </config>
         <ContributedStateBase type="MavenRuntime">
           <config>
-            <option name="homePath" value="/usr/share/maven" />
+            <option name="homePath" value="/opt/maven" />
             <option name="versionString" value="[1mApache Maven 3.6.3[m" />
           </config>
         </ContributedStateBase>

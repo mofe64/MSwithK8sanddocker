@@ -1,0 +1,7 @@
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/rabbitmq/NotificationConsumer.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/controller/NotificationController.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/models/Notification.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/services/NotificationService.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/repository/NotificationRepository.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/NotificationApplication.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/notification/src/main/java/com/nubari/notification/config/NotificationConfig.java

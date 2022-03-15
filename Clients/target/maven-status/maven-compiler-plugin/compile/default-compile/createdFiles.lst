@@ -1,0 +1,4 @@
+com/nubari/clients/fraud/FraudClient.class
+com/nubari/clients/fraud/responses/FraudCheckResponse.class
+com/nubari/clients/notification/NotificationClient.class
+com/nubari/clients/notification/requests/NotificationRequest.class

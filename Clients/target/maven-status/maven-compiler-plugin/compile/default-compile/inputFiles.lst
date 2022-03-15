@@ -1,0 +1,4 @@
+/mnt/d/devStrawhat/microServicesDemo/microservices/clients/src/main/java/com/nubari/clients/notification/NotificationClient.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/clients/src/main/java/com/nubari/clients/fraud/FraudClient.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/clients/src/main/java/com/nubari/clients/fraud/responses/FraudCheckResponse.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/clients/src/main/java/com/nubari/clients/notification/requests/NotificationRequest.java

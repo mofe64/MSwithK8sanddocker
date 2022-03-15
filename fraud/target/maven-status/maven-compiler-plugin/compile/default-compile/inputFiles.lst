@@ -1,0 +1,5 @@
+/mnt/d/devStrawhat/microServicesDemo/microservices/fraud/src/main/java/com/nubari/fraud/models/FraudCheckHistory.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/fraud/src/main/java/com/nubari/fraud/repository/FraudCheckHistoryRepository.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/fraud/src/main/java/com/nubari/fraud/FraudApplication.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/fraud/src/main/java/com/nubari/fraud/service/FraudCheckService.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/fraud/src/main/java/com/nubari/fraud/controllers/FraudController.java

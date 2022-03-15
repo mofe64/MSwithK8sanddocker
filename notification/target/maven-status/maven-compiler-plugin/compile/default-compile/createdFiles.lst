@@ -1,0 +1,8 @@
+com/nubari/notification/models/Notification$NotificationBuilder.class
+com/nubari/notification/rabbitmq/NotificationConsumer.class
+com/nubari/notification/models/Notification.class
+com/nubari/notification/controller/NotificationController.class
+com/nubari/notification/NotificationApplication.class
+com/nubari/notification/repository/NotificationRepository.class
+com/nubari/notification/config/NotificationConfig.class
+com/nubari/notification/services/NotificationService.class

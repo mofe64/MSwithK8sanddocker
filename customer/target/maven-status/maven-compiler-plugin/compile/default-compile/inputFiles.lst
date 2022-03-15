@@ -1,0 +1,8 @@
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/repository/CustomerRepository.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/dtos/requests/CustomerRegistrationRequest.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/controller/CustomerController.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/CustomerApplication.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/config/CustomerConfig.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/model/Customer.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/services/CustomerService.java
+/mnt/d/devStrawhat/microServicesDemo/microservices/customer/src/main/java/com/nubari/customer/services/CustomerServiceImpl.java

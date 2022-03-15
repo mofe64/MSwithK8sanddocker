@@ -50,6 +50,8 @@ services:
     container_name: zipkin
     ports:
       - "9411:9411"
+    networks:
+      - spring
 
   rabbitmq:
     image: rabbitmq:3.9.11-management-alpine
@@ -58,11 +60,94 @@ services:
       - "5672:5672"
       - "15672:15672" # rabbitmq management port
 
+  eureka-server:
+    image: eyimofe/eureka-server:latest
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILE_ACTIVE=docker
+    networks:
+      - spring
+    depends_on:
+      - zipkin
+
+  apigw:
+    image: eyimofe/apigw:latest
+    container_name: apigw
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILE_ACTIVE=docker
+    networks:
+      - spring
+    depends_on:
+      - zipkin
+      - eureka-server
+
+  customer:
+    image: eyimofe/customer:latest
+    container_name: customer
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILE_ACTIVE=docker
+    networks:
+      - spring
+      - postgres-customer
+      - postgres-fraud
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-fraud
+      - postgres-customer
+      - rabbitmq
+
+  fraud:
+    image: eyimofe/fraud:latest
+    container_name: fraud
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+      - postgres-customer
+      - postgres-fraud
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-fraud
+      - postgres-customer
+      - rabbitmq
+
+  notification:
+    image: eyimofe/notification:latest
+    container_name: notification
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+      - postgres-customer
+      - postgres-fraud
+    depends_on:
+      - zipkin
+      - eureka-server
+      - postgres-fraud
+      - postgres-customer
+      - rabbitmq
+
+
+
 
 networks:
   postgres-fraud:
     driver: bridge
   postgres-customer:
+    driver: bridge
+  spring:
     driver: bridge
 
 volumes:
